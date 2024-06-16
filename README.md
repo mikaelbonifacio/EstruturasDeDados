@@ -3,4 +3,4 @@
   - Arvores
   - Pilhas
 
-  Linguagem utilizada: Java, IDE intellij, arquitetura: MAVEN. 
+  Linguagem utilizada: Java, IDE intellij, MAVEN. 
