@@ -11,9 +11,9 @@ public class Queue {
         int value;
         Node next;
 
-        Node(int value) {
-            this.value = value;
-        }
+        Node(int value) { this.value = value;   }
+
+        public int getValue() { return this.value; }
     }
 
     public Queue(int value) {
@@ -79,8 +79,6 @@ public class Queue {
         length--;
         return temp;
     }
-
-
 
 
 
