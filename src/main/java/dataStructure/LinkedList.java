@@ -106,9 +106,19 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeFirst() {
+        if (length == 0) return null;
+        Node temp = head;
+        head = head.next;
+        temp.next  = null;
+        length--;
 
-
-
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+        return temp;
+    }
 
 
 
@@ -121,9 +131,11 @@ public class LinkedList {
         LinkedList list = new LinkedList("elemento 1");
         list.append("elemento 2");
         list.append("elemento 3");
-        System.out.println(list.removeLast().data);
-        list.print();
+        list.prepend("elemento 0");
 
+
+        System.out.println(list.removeFirst().data);
+        list.print();
        /*
         list.getHead();
         list.getTail();
