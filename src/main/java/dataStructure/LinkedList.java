@@ -129,10 +129,32 @@ public class LinkedList {
         return temp;
     }
 
+    public boolean insert(int index, String data) {
+        if (index <0 || index > length) return false;
+        if (index == 0 ) {
+            prepend(data);
+            return  true;
+        }
+        if (index == length) {
+            append(data);
+            return true;
+        }
+        Node newNode = new Node(data);
+        Node temp = get(index -1);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        length++;
+        return true;
+    }
 
-
-
-
+    public boolean set(int index, String data) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.data = data;
+            return true;
+        }
+        return false;
+    }
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList("elemento 1");
@@ -140,10 +162,14 @@ public class LinkedList {
         list.append("elemento 3");
         list.prepend("elemento 0");
 
+        list.insert(3,"elemento 2.5"); // insert
         System.out.println(list.get(2).data); // get
 
        // System.out.println(list.removeFirst().data);
-       // list.print();
+       list.print();
+       list.set(1, "elemento 0.5"); //set
+       list.print();
+
        /*
         list.getHead();
         list.getTail();
