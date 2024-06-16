@@ -56,7 +56,6 @@ public class Queue {
 
     public static void main(String[] args) {
         Queue myQueue = new Queue(1);
-
         myQueue.getFirst();
         myQueue.getLast();
         myQueue.getLength();
