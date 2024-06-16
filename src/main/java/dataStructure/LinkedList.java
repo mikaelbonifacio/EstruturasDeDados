@@ -91,24 +91,22 @@ public class LinkedList {
         return temp;
 
     }
-
-
-
-
-
-
-
+    
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList("elemento 1");
         list.append("elemento 2");
         list.append("elemento 3");
+        System.out.println(list.removeLast().data);
+        list.print();
+
+       /*
         list.getHead();
         list.getTail();
         list.getLength();
-
         list.print();
-    }
 
+        */
+    }
 
 }
