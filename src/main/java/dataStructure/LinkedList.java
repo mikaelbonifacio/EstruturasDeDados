@@ -1,5 +1,7 @@
 package dataStructure;
 
+import javax.swing.*;
+
 public class LinkedList {
 
     private Node head;
@@ -91,7 +93,29 @@ public class LinkedList {
         return temp;
 
     }
-    
+
+    public void prepend(String data) {
+        Node newNode = new Node(data);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head = newNode;
+        }
+        length++;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList("elemento 1");
