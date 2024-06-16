@@ -40,16 +40,51 @@ public class Stack {
             temp = temp.next;
         }
         System.out.println("#############################");
-
-
     }
 
-    public static void main(String[] args) {
-        Stack myStack = new Stack(4);
-        myStack.getTop();
-        myStack.getHeigth();
+    public void push(int value) {
+        Node newNode = new Node(value);
+        if (height == 0) {
+            top = newNode;
+        } else {
+            newNode.next = top;
+            top = newNode;
+        }
+        height++;
+    }
 
-        myStack.print();
+    public Node pop(){
+        if (height == 0) return null;
+
+        Node temp = top;
+        top = top.next;
+        temp.next = null;
+        height--;
+
+        return temp;
+    }
+
+
+
+
+
+
+
+
+
+    public static void main(String[] args) {
+        Stack myStack = new Stack(2);
+        myStack.push(1);
+
+
+        System.out.println(myStack.pop().value);
+        System.out.println(myStack.pop().value);
+
+//        myStack.print();
+//        myStack.getTop();
+//        myStack.getHeigth();
+
+
     }
 
 }
